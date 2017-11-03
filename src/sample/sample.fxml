@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.chart.PieChart?>
+
+<GridPane fx:id="chartGrid" alignment="center" hgap="10" prefHeight="480.0" prefWidth="800.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints maxWidth="206.0" minWidth="10.0" prefWidth="206.0" />
+      <ColumnConstraints maxWidth="750.0" minWidth="600.0" prefWidth="600.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Text id="titleText" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="216.0" prefWidth="206.0" spacing="5.0" GridPane.rowIndex="1" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Reports" />
+            <ChoiceBox prefWidth="150.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Start" />
+            <DatePicker fx:id="startDatePick" showWeekNumbers="true" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="End" />
+            <DatePicker fx:id="endDatePick" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Interval in Days" />
+            <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="84.0" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+      <Button fx:id="displayButton" alignment="CENTER" mnemonicParsing="false" onAction="#onDispButtonClicked" text="Display Report" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </GridPane.margin>
+      </Button>
+      <BarChart id="barChart" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <VBox alignment="BOTTOM_RIGHT" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <children>
+            <LineChart fx:id="lineChart">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" upperBound="30.0" />
+              </yAxis>
+            </LineChart>
+            <Button fx:id="displayButton1" alignment="CENTER" mnemonicParsing="false" onAction="#onDispButtonClicked" text="Save Report..." />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</GridPane>
